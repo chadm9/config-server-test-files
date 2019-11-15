@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url : jdbc:postgresql://localhost:5432/mydb
+    driver-class-name : org.postgresql.Driver
+    username: postgres
+    password: postgres
+
+ribbon:
+  eureka:
+    enabled: false
+
+
+mbbyoservice:
+  ribbon:
+    listOfServers: mbbyoservice-qa.apps.npe.us-east-1.nafta-ow.com
+
+mbdealerservice:
+  ribbon:
+    listOfServers: mbdealerservice-qa.apps.npe.us-east-1.nafta-ow.com
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
+scheduler:
+  warmUpCache:
+    enabled: false
